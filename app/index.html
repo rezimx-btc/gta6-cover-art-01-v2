@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Nights — Vice Cover Studio</title>
+<meta name="description" content="Turn your own photos into GTA-style poster art: seven multi-panel layouts, eight Vice grades, smart crop, cast tags and three-size PNG export.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <h1>LEONIDA NIGHTS</h1>
+  <p class="tag">Vice Cover Studio — turn your photos into GTA-style poster art</p>
+</header>
+<main>
+  <section class="preview-col">
+    <canvas id="preview" width="1280" height="720"></canvas>
+    <p id="smartToggleNote" class="hint"></p>
+    <button id="exportBtn" type="button" class="primary">Export PNG · 3 sizes</button>
+    <p class="hint">One click writes 1920 × 1080, 1080 × 1080 and 1080 × 1350.</p>
+  </section>
+  <section class="controls">
+    <div class="block">
+      <h2>Layout</h2>
+      <div id="layoutPicker" class="chips"></div>
+    </div>
+    <div class="block">
+      <h2>Grade</h2>
+      <div id="gradePicker" class="chips"></div>
+    </div>
+    <div class="block">
+      <h2>Panels</h2>
+      <div id="panelTabs" class="tabs"></div>
+      <div id="panelEditor" class="panel-editor"></div>
+    </div>
+    <div class="block">
+      <h2>Lettering</h2>
+      <label for="titleInput">Title</label>
+      <input id="titleInput" type="text" maxlength="24">
+      <label for="subtitleInput">Subtitle</label>
+      <input id="subtitleInput" type="text" maxlength="32">
+      <label for="captionInput">Caption</label>
+      <input id="captionInput" type="text" maxlength="90">
+      <label for="calloutInput">Callout</label>
+      <input id="calloutInput" type="text" maxlength="40">
+    </div>
+    <div class="block">
+      <h2>Cast</h2>
+      <div id="castEditor"></div>
+    </div>
+    <div class="block">
+      <h2>Poster extras</h2>
+      <label class="check"><input id="billingToggle" type="checkbox"> Billing block</label>
+      <label class="check"><input id="sealToggle" type="checkbox"> Seal</label>
+      <label class="check"><input id="calloutToggle" type="checkbox"> Callout</label>
+    </div>
+  </section>
+</main>
+<footer class="foot">
+  <p>Leonida Nights is an original cover maker. All art is drawn in your browser — no photos leave your machine, no network needed.</p>
+</footer>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>

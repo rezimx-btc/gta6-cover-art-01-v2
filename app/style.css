@@ -1,0 +1,244 @@
+/* Leonida Nights — dark neon Vice City editor styling. */
+* { box-sizing: border-box; }
+
+:root {
+  --bg: #0a0616;
+  --panel: #17102a;
+  --panel-2: #1f1538;
+  --line: #33254f;
+  --text: #f4efff;
+  --muted: #b9a8d8;
+  --accent: #ff2e88;
+  --accent-2: #39ffdc;
+  --gold: #ffd166;
+}
+
+html { background: var(--bg); }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.45;
+}
+
+.masthead {
+  padding: 22px 28px 12px;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(100deg, #1c0f2e 0%, #3b0f6e 55%, #0b0620 100%);
+}
+
+.masthead h1 {
+  margin: 0;
+  font-family: "Arial Narrow", "Helvetica Neue", Impact, sans-serif;
+  font-size: 40px;
+  letter-spacing: 0.06em;
+  color: #fff;
+  text-shadow: 0 0 22px rgba(255, 46, 136, 0.55);
+}
+
+.masthead .tag {
+  margin: 2px 0 0;
+  color: var(--gold);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+}
+
+main {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(300px, 1fr);
+  gap: 22px;
+  padding: 22px 28px;
+  align-items: start;
+}
+
+.preview-col canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #000;
+  cursor: crosshair;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 8px 0;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.block {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.block h2 {
+  margin: 0 0 10px;
+  font-family: "Arial Narrow", "Helvetica Neue", Impact, sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+}
+
+.block label {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+  margin: 10px 0 4px;
+}
+
+.block label.check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+input[type="text"], select {
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel-2);
+  color: var(--text);
+  font-size: 14px;
+}
+
+input[type="file"] {
+  width: 100%;
+  color: var(--muted);
+  font-size: 13px;
+  margin: 2px 0 6px;
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+input[type="checkbox"] {
+  accent-color: var(--accent);
+  width: 16px;
+  height: 16px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-2);
+  color: var(--text);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.chip:hover { border-color: var(--accent-2); }
+
+.chip.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.chip.grade::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--sw, #888);
+  margin-right: 6px;
+  vertical-align: -1px;
+}
+
+.tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.tab {
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px 8px 0 0;
+  background: var(--panel-2);
+  color: var(--muted);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.panel-editor {
+  border-top: 1px solid var(--line);
+  padding-top: 4px;
+}
+
+button.primary {
+  width: 100%;
+  padding: 14px;
+  margin-top: 12px;
+  border: 0;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--accent), #ff7e5f);
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button.primary:hover { filter: brightness(1.12); }
+
+button.ghost {
+  padding: 8px 12px;
+  margin: 8px 0 2px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--accent-2);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+button.ghost.small { padding: 6px 8px; margin: 0; }
+
+.cast-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 8px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.foot {
+  padding: 8px 28px 26px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  main { grid-template-columns: 1fr; }
+  .masthead h1 { font-size: 30px; }
+}
